@@ -44,7 +44,7 @@ $ VERSION=X.X.X docker build \
 --build-arg VERSION="$VERSION" \
 --build-arg VCS_REF="$VCS_REF" \
 --build-arg BUILD_DATE="$BUILD_DATE" \
---cache-from \
+--cache-from $NAME:$RELEASE \
 --tag "$NAME:$RELEASE" \
 --tag "$NAME:latest" \
 .
