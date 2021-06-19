@@ -1,5 +1,10 @@
 # myst-node
-
+![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/xpecex/myst-node/latest)
+![MicroBadger Layers (tag)](https://img.shields.io/microbadger/layers/xpecex/myst-node/latest)
+![Docker Image Size (tag)](https://img.shields.io/docker/image-size/xpecex/myst-node/latest)
+![Docker Pulls](https://img.shields.io/docker/pulls/xpecex/myst-node)
+![GitHub](https://img.shields.io/github/license/xpecex/myst-node)
+[![](https://api.travis-ci.com/xpecex/myst-node.svg?branch=main)](https://travis-ci.com/github/xpecex/myst-node)
 
 ### What is myst-node image?
 
