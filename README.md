@@ -1,5 +1,6 @@
 # myst-node
 
+
 ### What is myst-node image?
 
 > myst-node is a multi-architecture docker image containing the official Mysterium-Network Node binary.
@@ -13,6 +14,10 @@
 ### Tags:
  - latest
  - 0.47.2
+ - 0.47.1
+ - 0.47.0
+ - 0.46.1
+
 
 ### How to use this image
 

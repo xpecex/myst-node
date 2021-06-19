@@ -93,34 +93,34 @@ for RELEASE in "${RELEASES[@]}"; do
         docker buildx build \
         --push \
         --build-arg IMAGE_NAME="$IMAGE_NAME" \
-        --build-arg IMAGE_VER="${IMAGE_VER:-RELEASE}" \
+        --build-arg IMAGE_VER="${IMAGE_VER:-$RELEASE}" \
         --build-arg IMAGE_AUTHOR="$IMAGE_AUTHOR" \
         --build-arg IMAGE_VENDOR="$IMAGE_VENDOR" \
-        --build-arg IMAGE_REF="${IMAGE_REF:-IMAGE_ALT_REF}" \
+        --build-arg IMAGE_REF="${IMAGE_REF:-$IMAGE_ALT_REF}" \
         --build-arg IMAGE_DESC="$IMAGE_DESC" \
         --build-arg IMAGE_BUILD_DATE="$IMAGE_BUILD_DATE" \
         --build-arg IMAGE_URL="$IMAGE_URL" \
         --build-arg IMAGE_LICENSE="$IMAGE_LICENSE" \
         --cache-from "${IMAGE_NAME}:latest" \
         --platform "$(echo ${ARCHS[@]} | sed 's/ /,/g')" \
-        -t "${IMAGE_NAME}:${IMAGE_VER:-RELEASE}" \
+        -t "${IMAGE_NAME}:${IMAGE_VER:-$RELEASE}" \
         -t "${IMAGE_NAME}:latest" \
         .
     else
         docker buildx build \
         --push \
         --build-arg IMAGE_NAME="$IMAGE_NAME" \
-        --build-arg IMAGE_VER="${IMAGE_VER:-RELEASE}" \
+        --build-arg IMAGE_VER="${IMAGE_VER:-$RELEASE}" \
         --build-arg IMAGE_AUTHOR="$IMAGE_AUTHOR" \
         --build-arg IMAGE_VENDOR="$IMAGE_VENDOR" \
-        --build-arg IMAGE_REF="${IMAGE_REF:-IMAGE_ALT_REF}" \
+        --build-arg IMAGE_REF="${IMAGE_REF:-$IMAGE_ALT_REF}" \
         --build-arg IMAGE_DESC="$IMAGE_DESC" \
         --build-arg IMAGE_BUILD_DATE="$IMAGE_BUILD_DATE" \
         --build-arg IMAGE_URL="$IMAGE_URL" \
         --build-arg IMAGE_LICENSE="$IMAGE_LICENSE" \
         --cache-from "${IMAGE_NAME}:latest" \
         --platform "$(echo ${ARCHS[@]} | sed 's/ /,/g')" \
-        -t "${IMAGE_NAME}:${IMAGE_VER:-RELEASE}" \
+        -t "${IMAGE_NAME}:${IMAGE_VER:-$RELEASE}" \
         .
     fi
 
