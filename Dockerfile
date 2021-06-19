@@ -36,7 +36,7 @@ LABEL org.opencontainers.image.title="$IMAGE_NAME" \
 # Install Dependencies
 RUN apt update && \
     echo "resolvconf resolvconf/linkify-resolvconf boolean false" | debconf-set-selections && \
-    apt install --no-install-recommends -yqq wget openvpn wireguard resolvconf iptables iproute2 sudo wireguard libcap2-bin && \
+    apt install --no-install-recommends -yqq wget openvpn wireguard resolvconf iptables iproute2 sudo wireguard libcap2-bin ca-certificates && \
     rm -rf /var/cache/apt/* /var/lib/apt/lists/*
 
 # COPY Entrypoint and prepare-env scripts
