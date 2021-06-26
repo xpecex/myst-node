@@ -8,7 +8,7 @@
 
 ### What is myst-node image?
 
-> myst-node is a multi-architecture docker image containing the official Mysterium-Network Node binary.
+> myst-node is a multi-architecture docker image containing the official [Mysterium-Network](https://github.com/mysteriumnetwork/node) Node binary.
 
 ### What is Mysterium-Network?
 
@@ -18,6 +18,9 @@
 
 ### Tags:
  - latest
+ - 0.49.0
+ - 0.48.0
+ - 0.47.3
  - 0.47.2
  - 0.47.1
  - 0.47.0
@@ -47,17 +50,7 @@ $ chmod +x build.sh
 
 # Building a multi-arch image requires buildx 
 # see more here: https://www.docker.com/blog/getting-started-with-docker-for-arm-on-linux/
-$ VERSION=X.X.X DOCKER_USER=docker_username DOCKER_PASSWORD=docker_password ALT_NAME="docker_username/image_name" ./build.sh
-
-# Building a single architecture image
-$ VERSION=X.X.X docker build \
---build-arg VERSION="$VERSION" \
---build-arg VCS_REF="$VCS_REF" \
---build-arg BUILD_DATE="$BUILD_DATE" \
---cache-from $NAME:$RELEASE \
---tag "$NAME:$RELEASE" \
---tag "$NAME:latest" \
-.
+$ ./build.sh
 ````
 
 NOTE: Replace variables as per your needs
