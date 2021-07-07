@@ -14,6 +14,12 @@ IMAGE_ALT_REF="$(cat /dev/urandom | tr -dc 'a-z0-9' | fold -w 7 | head -n 1)"
 
 # RELEASES LIST
 RELEASES=(
+    "0.47.0"
+    "0.47.1"
+    "0.47.2"
+    "0.47.3"
+    "0.48.0"
+    "0.49.0"
     "0.50.1"
     "0.51.0"
     "0.52.0"
