@@ -124,13 +124,13 @@ for RELEASE in "${RELEASES[@]}"; do
         .
     fi
 
+    # PRINT DEL INFO
+    echo "Removing files used in build"
+
+    # Remove Files
+    rm -rf linux docker-entrypoint.sh prepare-run-env.sh
+
 done
 
-# PRINT DEL INFO
-echo "Removing files used in construction"
-
-# Remove Files
-rm -rf linux docker-entrypoint.sh prepare-run-env.sh
-
 # PRINT BUILD INFO
-echo " ========= Construction completed successfully ========= "
+echo " ========= build completed successfully ========= "
