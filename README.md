@@ -8,7 +8,7 @@
 
 ### What is myst-node image?
 
-> myst-node is a multi-architecture docker image containing the official [Mysterium-Network](https://github.com/mysteriumnetwork/node) Node binary.
+> myst-node is a multi-architecture docker image containing the official [Mysterium-Network Node binary](https://github.com/mysteriumnetwork/node).
 
 ### What is Mysterium-Network?
 
@@ -18,6 +18,9 @@
 
 ### Tags:
  - latest
+ - 0.52.0
+ - 0.51.0
+ - 0.50.1
  - 0.49.0
  - 0.48.0
  - 0.47.3
@@ -37,7 +40,7 @@ docker run -d \
 -v /your_path/data/:/var/lib/mysterium-node \
 -v /your_path/run/:/var/run/mysterium-node \
 xpecex/myst-node:latest \
-service --openvpn.port 1194 --agreed-terms-and-conditions $SERVICE_OPTS
+service --agreed-terms-and-conditions
 ````
 *NOTE: replace **your_path** with the path you prefer to save myst-node configuration and data files*
 
@@ -53,7 +56,7 @@ $ chmod +x build.sh
 $ ./build.sh
 ````
 
-NOTE: Replace variables as per your needs
+NOTE: Replace variables in ```build.sh``` as per your needs
 
 -------------
 [![Donate with Ethereum](https://en.cryptobadges.io/badge/small/0xE32cACcB768a3E65e83B3AF39ca31f446C06432D)](https://en.cryptobadges.io/donate/0xE32cACcB768a3E65e83B3AF39ca31f446C06432D)

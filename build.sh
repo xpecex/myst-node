@@ -14,9 +14,9 @@ IMAGE_ALT_REF="$(cat /dev/urandom | tr -dc 'a-z0-9' | fold -w 7 | head -n 1)"
 
 # RELEASES LIST
 RELEASES=(
-    "0.47.3"
-    "0.48.0"
-    "0.49.0"
+    "0.50.1"
+    "0.51.0"
+    "0.52.0"
 )
 # LATEST RELEASE
 LATEST_RELEASE=$(curl -s "https://github.com/mysteriumnetwork/node/releases/latest" | cut -d'/' -f 8 | cut -d'"' -f 1)

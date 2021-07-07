@@ -1,5 +1,14 @@
 FROM ubuntu:18.04
 
+# Set Debian Frontend
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Install Dependencies
+RUN apt update && \
+    echo "resolvconf resolvconf/linkify-resolvconf boolean false" | debconf-set-selections && \
+    apt install --no-install-recommends -yqq wget openvpn wireguard resolvconf iptables iproute2 sudo wireguard libcap2-bin ca-certificates && \
+    rm -rf /var/cache/apt/* /var/lib/apt/lists/*
+
 # BUILD ARGs
 ARG TARGETPLATFORM
 ARG IMAGE_NAME
@@ -11,14 +20,6 @@ ARG IMAGE_DESC
 ARG IMAGE_BUILD_DATE
 ARG IMAGE_URL
 ARG IMAGE_LICENSE
-
-# Set Debian Frontend
-ENV DEBIAN_FRONTEND=noninteractive
-
-# MYSTERIUM NETWORK ENV
-ENV OS_DIR_CONFIG="/etc/mysterium-node"
-ENV OS_DIR_DATA="/var/lib/mysterium-node"
-ENV OS_DIR_RUN="/var/run/mysterium-node"
 
 # Labels
 LABEL org.opencontainers.image.title="$IMAGE_NAME" \
@@ -32,12 +33,6 @@ LABEL org.opencontainers.image.title="$IMAGE_NAME" \
     org.opencontainers.image.revision="$IMAGE_REF" \
     org.opencontainers.image.version="$IMAGE_VER" \
     org.opencontainers.image.licenses="$IMAGE_LICENSE"
-
-# Install Dependencies
-RUN apt update && \
-    echo "resolvconf resolvconf/linkify-resolvconf boolean false" | debconf-set-selections && \
-    apt install --no-install-recommends -yqq wget openvpn wireguard resolvconf iptables iproute2 sudo wireguard libcap2-bin ca-certificates && \
-    rm -rf /var/cache/apt/* /var/lib/apt/lists/*
 
 # COPY Entrypoint and prepare-env scripts
 COPY $TARGETPLATFORM/myst_node.deb /tmp/myst_node.deb
