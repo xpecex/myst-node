@@ -41,9 +41,6 @@ COPY prepare-run-env.sh /usr/local/bin/prepare-run-env.sh
 
 # Install Mysterium-Node
 RUN dpkg -i /tmp/myst_node.deb && \
-    mkdir -p $OS_DIR_CONFIG && \
-    mkdir -p $OS_DIR_DATA && \
-    mkdir -p $OS_DIR_RUN && \
     ln -s /lib/ld-linux-*.so.3 /lib/ld-linux.so.3 && \
     rm -rf /tmp/*
 

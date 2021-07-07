@@ -48,19 +48,20 @@ else
 fi
 
 # ========================= BUILD =========================
-# PRINT DOWNLOAD docker-entrypoint.sh AND prepare-run-env.sh
-echo "DOWNLOAD docker-entrypoint.sh AND prepare-run-env.sh"
-
-# DOWNLOAD docker-entrypoint.sh AND prepare-run-env.sh
-wget -q -O docker-entrypoint.sh -c https://raw.githubusercontent.com/mysteriumnetwork/node/master/bin/docker/docker-entrypoint.sh
-wget -q -O prepare-run-env.sh -c https://raw.githubusercontent.com/mysteriumnetwork/node/master/bin/helpers/prepare-run-env.sh
-chmod +x docker-entrypoint.sh prepare-run-env.sh
 
 # SEARCH RELEASES FOR BUILD
 for RELEASE in "${RELEASES[@]}"; do
 
     # PRINT BUILD INFO
     echo " ========= BUILDING RELEASE: $RELEASE ========= "
+
+    # PRINT DOWNLOAD docker-entrypoint.sh AND prepare-run-env.sh
+    echo "DOWNLOAD docker-entrypoint.sh AND prepare-run-env.sh"
+
+    # DOWNLOAD docker-entrypoint.sh AND prepare-run-env.sh
+    wget -q -O docker-entrypoint.sh -c https://raw.githubusercontent.com/mysteriumnetwork/node/${$RELEASE}/bin/docker/docker-entrypoint.sh
+    wget -q -O prepare-run-env.sh -c https://raw.githubusercontent.com/mysteriumnetwork/node/${$RELEASE}/bin/helpers/prepare-run-env.sh
+    chmod +x docker-entrypoint.sh prepare-run-env.sh
 
     # Download myst-node .DEB PACKAGE
     for ARCH in "${ARCHS[@]}"; do
