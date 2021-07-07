@@ -59,8 +59,8 @@ for RELEASE in "${RELEASES[@]}"; do
     echo "DOWNLOAD docker-entrypoint.sh AND prepare-run-env.sh"
 
     # DOWNLOAD docker-entrypoint.sh AND prepare-run-env.sh
-    wget -q -O docker-entrypoint.sh -c https://raw.githubusercontent.com/mysteriumnetwork/node/${$RELEASE}/bin/docker/docker-entrypoint.sh
-    wget -q -O prepare-run-env.sh -c https://raw.githubusercontent.com/mysteriumnetwork/node/${$RELEASE}/bin/helpers/prepare-run-env.sh
+    wget -q -O docker-entrypoint.sh -c https://raw.githubusercontent.com/mysteriumnetwork/node/${RELEASE}/bin/docker/docker-entrypoint.sh
+    wget -q -O prepare-run-env.sh -c https://raw.githubusercontent.com/mysteriumnetwork/node/${RELEASE}/bin/helpers/prepare-run-env.sh
     chmod +x docker-entrypoint.sh prepare-run-env.sh
 
     # Download myst-node .DEB PACKAGE
