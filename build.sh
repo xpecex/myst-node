@@ -23,6 +23,7 @@ RELEASES=(
     "0.50.1"
     "0.51.0"
     "0.52.0"
+    "0.53.0"
 )
 # LATEST RELEASE
 LATEST_RELEASE=$(curl -s "https://github.com/mysteriumnetwork/node/releases/latest" | cut -d'/' -f 8 | cut -d'"' -f 1)
