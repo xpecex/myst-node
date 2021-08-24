@@ -18,17 +18,11 @@
 
 ### Tags:
  - latest
- - 0.53.1
- - 0.53.0
- - 0.52.0
- - 0.51.0
- - 0.50.1
- - 0.49.0
- - 0.48.0
- - 0.47.3
- - 0.47.2
- - 0.47.1
- - 0.47.0
+ - 0.61.0
+ - 0.60.0
+ - 0.53.3
+ - 0.53.2
+ - [more tags](https://hub.docker.com/r/xpecex/myst-node/tags?page=1&ordering=last_updated)
 
 
 ### How to use this image
